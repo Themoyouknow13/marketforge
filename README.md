@@ -5,6 +5,8 @@ MarketForge is a production scaffold for a source-grounded daily market intellig
 ## What exists now
 
 - A full production workflow and agent map: `docs/WORKFLOW.md`
+- Dual-thesis workflow (Bull/Bear × Popular/Contrarian): `docs/DUAL_THESIS_WORKFLOW.md`
+- Dual-thesis agent contracts: `docs/DUAL_THESIS_AGENTS.md`
 - A visual architecture diagram: `docs/marketforge-architecture.html`
 - A phased implementation roadmap: `docs/IMPLEMENTATION_ROADMAP.md`
 - Strict role contracts for every agent: `docs/AGENT_CONTRACTS.md`
@@ -35,12 +37,17 @@ uv run python scripts/run_demo_briefing.py
 # LIVE scrape (Yahoo market prints + SEC EDGAR feeds → validate → HTML)
 uv run python scripts/run_live_briefing.py
 # Open: site/output/live-brief-YYYY-MM-DD.html
+
+# Dual thesis supplement (Bull/Bear × Popular/Contrarian) from approved bundle
+uv run python scripts/run_dual_thesis.py runs/<run-id>/run-bundle.json
+# Open: site/output/dual-thesis.html  and  site/output/hub.html
 ```
 
 ## Live site
 
-- **Homepage:** https://themoyouknow13.github.io/marketforge/
-- **Latest brief:** https://themoyouknow13.github.io/marketforge/output/daily-brief-2026-08-08.html
+- **Homepage / hub:** https://themoyouknow13.github.io/marketforge/
+- **Latest brief:** https://themoyouknow13.github.io/marketforge/output/index.html
+- **Dual thesis:** https://themoyouknow13.github.io/marketforge/output/dual-thesis.html
 - **Repo:** https://github.com/Themoyouknow13/marketforge
 
 Hosted on GitHub Pages from the `gh-pages` branch (contents of `site/`). Local preview:

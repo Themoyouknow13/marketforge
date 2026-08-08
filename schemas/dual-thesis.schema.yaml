@@ -1,0 +1,73 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$title: MarketForge Dual Thesis Bundle
+type: object
+required: [run, summary, summary_claim_ids, frames, dialectic, disclaimer, polarization, popular_direction]
+additionalProperties: false
+properties:
+  run:
+    type: object
+    required: [run_id, as_of, thesis_engine]
+    properties:
+      run_id: {type: string}
+      as_of: {type: string}
+      parent_mode: {type: string}
+      thesis_engine: {type: string}
+  parent_article_title: {type: string}
+  popular_direction: {enum: [risk_on, risk_off, mixed]}
+  polarization:
+    type: object
+    required: [bull_support, bear_support, contested, neutral]
+    properties:
+      bull_support: {type: array, items: {type: string}}
+      bear_support: {type: array, items: {type: string}}
+      contested: {type: array, items: {type: string}}
+      neutral: {type: array, items: {type: string}}
+  summary: {type: string}
+  summary_claim_ids: {type: array, minItems: 1, items: {type: string}}
+  frames:
+    type: object
+    required: [popular_bull, contrarian_bull, popular_bear, contrarian_bear]
+    additionalProperties: false
+    properties:
+      popular_bull: {$ref: '#/$defs/frame'}
+      contrarian_bull: {$ref: '#/$defs/frame'}
+      popular_bear: {$ref: '#/$defs/frame'}
+      contrarian_bear: {$ref: '#/$defs/frame'}
+  dialectic:
+    type: array
+    items:
+      type: object
+      required: [point, point_claim_ids, counterpoint, counterpoint_claim_ids]
+      properties:
+        point: {type: string}
+        point_claim_ids: {type: array, minItems: 1, items: {type: string}}
+        counterpoint: {type: string}
+        counterpoint_claim_ids: {type: array, minItems: 1, items: {type: string}}
+  disclaimer: {type: string, minLength: 1}
+$defs:
+  frame:
+    type: object
+    required: [key, title, stance, style, claim_ids, paragraphs, falsifiers]
+    properties:
+      key: {type: string}
+      title: {type: string}
+      stance: {enum: [bull, bear]}
+      style: {enum: [popular, contrarian]}
+      claim_ids: {type: array, minItems: 1, items: {type: string}}
+      paragraphs:
+        type: array
+        minItems: 1
+        items:
+          type: object
+          required: [text, claim_ids]
+          properties:
+            text: {type: string}
+            claim_ids: {type: array, minItems: 1, items: {type: string}}
+      falsifiers:
+        type: array
+        items:
+          type: object
+          required: [text, claim_ids]
+          properties:
+            text: {type: string}
+            claim_ids: {type: array, minItems: 1, items: {type: string}}
