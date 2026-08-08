@@ -33,6 +33,19 @@ uv run python scripts/run_demo_briefing.py
 # Open: site/output/daily-brief-YYYY-MM-DD.html  or  site/index.html
 ```
 
+## Live site
+
+- **Homepage:** https://themoyouknow13.github.io/marketforge/
+- **Latest brief:** https://themoyouknow13.github.io/marketforge/output/daily-brief-2026-08-08.html
+- **Repo:** https://github.com/Themoyouknow13/marketforge
+
+Hosted on GitHub Pages from the `gh-pages` branch (contents of `site/`). Local preview:
+
+```bash
+cd site && python -m http.server 8080
+# http://127.0.0.1:8080/
+```
+
 The CLI exits non-zero and prints `BLOCKED` if any publication gate fails.
 
 ## Non-negotiable design rule
