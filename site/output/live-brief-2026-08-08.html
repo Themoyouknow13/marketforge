@@ -3,165 +3,373 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Live scrape: SPY 773.26 (+3.51%), QQQ 723.03 (+5.09%). Top gainer TEAM +35.31%. SEC feed captured 12 recent 8-K entries; deep dive on TEAM 8-K accession 0001650372-26-000031.">
+<meta name="description" content="SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924. Top live gainer TEAM moved +35.31% to $149.07. The SEC current 8-K feed re">
 <meta name="robots" content="index,follow">
 <title>MarketForge Live Brief — August 08, 2026 17:04 UTC</title>
 <style>
 :root {
   color-scheme: dark;
-  --bg: #071018;
-  --panel: #101d27;
-  --line: #223746;
-  --text: #e8f0f5;
-  --muted: #96a8b4;
-  --accent: #7be0bd;
-  --claim: #ffca64;
-  --link: #81bff8;
-  --pill: #1b3344;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  --bg:#070d14;
+  --panel:#0f1822;
+  --panel2:#132030;
+  --line:#243445;
+  --text:#e7eef5;
+  --muted:#8fa3b5;
+  --accent:#3dde9c;
+  --up:#3dde9c;
+  --down:#ff6b7a;
+  --chip:#1a2a39;
+  --link:#7cc4ff;
+  --warn:#ffd27a;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  font-family: var(--sans);
 }
-* { box-sizing: border-box; }
-body { margin: 0; background: radial-gradient(circle at top, #0d1b27 0%, var(--bg) 42%); color: var(--text); }
-.shell { max-width: 980px; margin: auto; padding: 28px 20px 96px; }
-.topbar {
-  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  align-items: center; margin-bottom: 28px; color: var(--muted); font-size: .92rem;
+* { box-sizing:border-box; }
+body { margin:0; background:
+  radial-gradient(1200px 500px at 10% -10%, #143049 0%, transparent 55%),
+  radial-gradient(900px 400px at 90% 0%, #10261d 0%, transparent 40%),
+  var(--bg); color:var(--text); }
+a { color:var(--link); }
+.shell { max-width:1180px; margin:auto; padding:18px 16px 80px; }
+.topnav {
+  position:sticky; top:0; z-index:20; backdrop-filter: blur(10px);
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  padding:10px 0 14px; margin-bottom:8px; border-bottom:1px solid rgba(36,52,69,.8);
+  background:rgba(7,13,20,.82);
 }
-.badge {
-  display: inline-flex; gap: .5rem; align-items: center;
-  border: 1px solid var(--line); background: rgba(16,29,39,.85);
-  border-radius: 999px; padding: .45rem .85rem;
+.brand { display:flex; gap:8px; align-items:center; color:var(--muted); font-size:.9rem; }
+.brand strong { color:var(--accent); letter-spacing:.04em; }
+.navlinks { display:flex; gap:8px; flex-wrap:wrap; }
+.navlinks a {
+  text-decoration:none; color:#d5e4f0; border:1px solid var(--line); background:rgba(15,24,34,.9);
+  border-radius:999px; padding:.4rem .75rem; font-size:.86rem;
 }
-.badge strong { color: var(--accent); font-weight: 600; }
-header.hero {
-  background: linear-gradient(180deg, rgba(16,29,39,.95), rgba(16,29,39,.55));
-  border: 1px solid var(--line); border-radius: 22px; padding: 28px 28px 24px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+.navlinks a:hover { border-color:var(--accent); color:white; }
+.hero {
+  display:grid; grid-template-columns: 1.4fr .8fr; gap:16px; margin:18px 0 20px;
 }
-h1 {
-  font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.03em;
-  margin: 10px 0 14px;
+.hero-main, .hero-rail, .desk-section, .drawer {
+  background:linear-gradient(180deg, rgba(19,32,48,.95), rgba(15,24,34,.92));
+  border:1px solid var(--line); border-radius:18px;
 }
-.summary { font-size: 1.12rem; line-height: 1.7; color: #c5d4de; margin: 0; }
-.meta-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px; margin-top: 22px;
+.hero-main { padding:22px; }
+.hero-rail { padding:16px; }
+.kicker { color:var(--accent); text-transform:uppercase; letter-spacing:.08em; font-size:.75rem; font-weight:700; }
+h1 { margin:8px 0 12px; font-size:clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-.03em; line-height:1.05; }
+h2 { margin:0; font-size:1.35rem; letter-spacing:-.02em; }
+.summary { color:#c9d7e4; line-height:1.7; font-size:1.05rem; }
+.meta { color:var(--muted); font-size:.86rem; }
+.mono { font-family:var(--mono); }
+.rail-stats { display:grid; gap:10px; }
+.stat {
+  background:rgba(7,13,20,.45); border:1px solid var(--line); border-radius:12px; padding:12px;
 }
-.meta-card {
-  background: rgba(7,16,24,.55); border: 1px solid var(--line);
-  border-radius: 14px; padding: 12px 14px;
+.stat span { display:block; color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; }
+.stat strong { display:block; margin-top:4px; font-size:1.15rem; }
+.layout { display:grid; grid-template-columns: 200px minmax(0,1fr); gap:16px; }
+.toc {
+  position:sticky; top:64px; align-self:start; border:1px solid var(--line); border-radius:16px;
+  background:rgba(15,24,34,.9); padding:14px;
 }
-.meta-card span { display: block; color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
-.meta-card strong { display: block; margin-top: 4px; font-size: .98rem; }
-.layout {
-  display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; margin-top: 28px;
+.toc h3 { margin:0 0 8px; color:var(--muted); font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; }
+.toc ol { margin:0; padding-left:1.1rem; color:var(--muted); }
+.toc a { color:#d7e6ef; text-decoration:none; font-size:.9rem; }
+.desk-section { padding:18px 18px 16px; margin-bottom:14px; }
+.section-head { display:flex; justify-content:space-between; gap:12px; margin-bottom:12px; }
+.meaning {
+  background:rgba(7,13,20,.35); border:1px solid rgba(36,52,69,.85); border-radius:14px;
+  padding:14px; margin-bottom:12px;
 }
-nav.toc {
-  position: sticky; top: 18px; align-self: start;
-  background: rgba(16,29,39,.8); border: 1px solid var(--line);
-  border-radius: 16px; padding: 16px;
+.meaning .print { margin:0 0 8px; font-size:.98rem; color:#f2f7fb; }
+.context, .implication { margin:8px 0; color:#c4d3e0; line-height:1.6; }
+.context span, .implication span {
+  display:inline-block; min-width:64px; color:var(--muted); text-transform:uppercase;
+  letter-spacing:.06em; font-size:.72rem; font-weight:700; margin-right:6px;
 }
-nav.toc h2 { margin: 0 0 10px; font-size: .85rem; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
-nav.toc ol { margin: 0; padding-left: 1.1rem; color: var(--muted); }
-nav.toc a { color: #d7e6ef; text-decoration: none; font-size: .92rem; }
-nav.toc a:hover { color: var(--accent); }
-main.article section {
-  background: rgba(16,29,39,.55); border: 1px solid var(--line);
-  border-radius: 18px; padding: 8px 22px 18px; margin-bottom: 18px;
+.source-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.source-chip {
+  display:inline-flex; align-items:center; gap:.35rem; text-decoration:none;
+  border:1px solid var(--line); background:var(--chip); color:#dceaf7;
+  border-radius:999px; padding:.35rem .7rem; font-size:.8rem;
 }
-h2 { margin-top: 18px; color: var(--accent); font-size: 1.25rem; }
-p { line-height: 1.8; color: #dce7ee; }
-.claim { color: var(--claim); margin-left: .15rem; text-decoration: none; font-size: .92em; }
-.claim:hover { text-decoration: underline; }
-.ledger { margin-top: 18px; }
-.claim-card {
-  background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
-  padding: 16px 18px; margin: 14px 0;
+.source-chip:hover { border-color:var(--link); color:white; }
+.source-chip.sec { border-color:#35506a; }
+.source-chip.market { border-color:#2f5a48; }
+.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; }
+.tile {
+  background:rgba(7,13,20,.5); border:1px solid var(--line); border-radius:14px; padding:12px 12px 10px;
 }
-.claim-head { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
-.claim-card h3 { margin: 0; font-size: 1rem; color: var(--claim); }
+.tile-top { display:flex; justify-content:space-between; gap:8px; align-items:center; margin-bottom:8px; }
+.symbol { font-weight:700; letter-spacing:.03em; }
+.tile .print { margin:0 0 8px; font-size:.86rem; color:#eef5fb; line-height:1.45; }
+.tile .context, .tile .implication { font-size:.88rem; }
+.benchmark.up { box-shadow: inset 3px 0 0 var(--up); }
+.benchmark.down { box-shadow: inset 3px 0 0 var(--down); }
+.mover.gainer { box-shadow: inset 3px 0 0 var(--up); }
+.mover.loser { box-shadow: inset 3px 0 0 var(--down); }
+.filing { box-shadow: inset 3px 0 0 #7cc4ff; }
+.dir { color:var(--muted); }
+.benchmark.up .dir { color:var(--up); }
+.benchmark.down .dir { color:var(--down); }
 .pill {
-  display: inline-block; background: var(--pill); color: var(--accent);
-  border-radius: 999px; padding: .2rem .6rem; font-size: .75rem; text-transform: uppercase;
+  border-radius:999px; border:1px solid var(--line); color:var(--muted);
+  padding:.18rem .5rem; font-size:.7rem; text-transform:uppercase; letter-spacing:.05em;
 }
-.claim-card ul { padding-left: 1.1rem; }
-.claim-card li { margin: 10px 0; }
-.meta { color: var(--muted); font-size: .86rem; }
-blockquote {
-  color: #b8c8d2; border-left: 3px solid var(--accent); margin: 8px 0 0;
-  padding: 4px 0 4px 12px;
+.pill.filing { color:#9fd0ff; border-color:#35506a; }
+.pill.none { color:var(--warn); border-color:#5a4a28; }
+.drawer { padding:8px 16px 16px; margin-top:16px; }
+.drawer summary {
+  cursor:pointer; list-style:none; padding:12px 0; color:var(--muted);
+  text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; font-weight:700;
 }
-table {
-  width: 100%; border-collapse: collapse; margin-top: 12px;
-  background: rgba(16,29,39,.55); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+.claim-card {
+  background:rgba(7,13,20,.45); border:1px solid var(--line); border-radius:12px;
+  padding:12px; margin:10px 0;
 }
-th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
-th { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
-code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; color: #cfe7ff; }
-a { color: var(--link); }
+.claim-head { display:flex; justify-content:space-between; gap:8px; align-items:center; }
+.claim-card h3 { margin:0; color:var(--warn); font-size:.95rem; }
+blockquote { margin:8px 0 0; padding-left:10px; border-left:3px solid var(--accent); color:#b7c8d6; }
+table { width:100%; border-collapse:collapse; margin-top:8px; }
+th, td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top; font-size:.9rem; }
+th { color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; }
 .disclaimer {
-  margin-top: 28px; padding: 18px 20px; border: 1px solid var(--line);
-  border-radius: 16px; color: var(--muted); background: rgba(16,29,39,.55); line-height: 1.7;
+  margin-top:16px; color:var(--muted); border:1px solid var(--line); border-radius:14px;
+  padding:14px 16px; line-height:1.65; background:rgba(15,24,34,.7);
 }
-footer {
-  margin-top: 24px; color: #6f8290; font-size: .86rem; text-align: center;
-}
-@media (max-width: 860px) {
-  .layout { grid-template-columns: 1fr; }
-  nav.toc { position: static; }
+footer { margin-top:14px; text-align:center; color:#6d8192; font-size:.82rem; }
+@media (max-width: 960px) {
+  .hero, .layout { grid-template-columns:1fr; }
+  .toc { position:static; }
 }
 </style>
 </head>
 <body>
 <div class="shell">
-  <div class="topbar">
-    <div class="badge"><a href="dual-thesis.html" style="color:#7be0bd;text-decoration:none">Dual Thesis → Bull/Bear · Popular/Contrarian</a></div>
-
-    <div class="badge"><strong>MarketForge</strong><span>Daily Intelligence</span></div>
-    <div>Run <code>live-20260808-170443</code> · mode <code>daily_close</code></div>
+  <div class="topnav">
+    <div class="brand"><strong>MARKETFORGE</strong><span>Terminal Research</span></div>
+    <nav class="navlinks" aria-label="Desk navigation"><a href="#market-overview">Markets</a><a href="#top-movers">Movers</a><a href="#sec-highlights">SEC</a><a href="#deep-dive">Deep dive</a><a href="#watchlist">Watchlist</a><a href="dual-thesis.html">Bull / Bear</a><a href="#sources-drawer">Sources</a></nav>
   </div>
 
   <header class="hero">
-    <div class="badge">As of 2026-08-08T17:04:43Z</div>
-    <h1>MarketForge Live Brief — August 08, 2026 17:04 UTC</h1>
-    <p class="summary">Live scrape: SPY 773.26 (+3.51%), QQQ 723.03 (+5.09%). Top gainer TEAM +35.31%. SEC feed captured 12 recent 8-K entries; deep dive on TEAM 8-K accession 0001650372-26-000031. <a class="claim" href="#claim-cl-spy">[cl-spy]</a><a class="claim" href="#claim-cl-qqq">[cl-qqq]</a><a class="claim" href="#claim-cl-vix">[cl-vix]</a><a class="claim" href="#claim-cl-gainer0">[cl-gainer0]</a><a class="claim" href="#claim-cl-8k-count">[cl-8k-count]</a><a class="claim" href="#claim-cl-deep-meta">[cl-deep-meta]</a></p>
-    <div class="meta-grid">
-      <div class="meta-card"><span>Sources</span><strong>3</strong></div>
-      <div class="meta-card"><span>Evidence</span><strong>13</strong></div>
-      <div class="meta-card"><span>Claims</span><strong>14</strong></div>
-      <div class="meta-card"><span>Publish gate</span><strong>Validated</strong></div>
+    <div class="hero-main">
+      <div class="kicker">Daily desk brief · daily_close</div>
+      <h1>MarketForge Live Brief — August 08, 2026 17:04 UTC</h1>
+      <p class="summary">SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924. Top live gainer TEAM moved +35.31% to $149.07. The SEC current 8-K feed returned 12 recent entries in this scrape. TEAM focus filing is form 8-K, accession 0001650372-26-000031, filed 2026-08-06. Focus filing case study: TEAM.</p>
+      <div class="source-chips"><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a><a class="source-chip sec" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom" target="_blank" rel="noopener noreferrer">SEC · Filing</a><a class="source-chip sec" href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">SEC · Filing</a></div>
+      <p class="meta" style="margin-top:12px">As of <span class="mono">2026-08-08T17:04:43Z</span> · run <span class="mono">live-20260808-170443</span></p>
     </div>
+    <aside class="hero-rail">
+      <div class="rail-stats">
+        <div class="stat"><span>Sources</span><strong>3</strong></div>
+        <div class="stat"><span>Evidence</span><strong>13</strong></div>
+        <div class="stat"><span>Claims</span><strong>14</strong></div>
+        <div class="stat"><span>Publish gate</span><strong>Validated</strong></div>
+        <div class="stat"><span>Ideas desk</span><strong><a href="dual-thesis.html">Bull / Bear</a></strong></div>
+      </div>
+    </aside>
   </header>
 
   <div class="layout">
-    <nav class="toc" aria-label="Table of contents">
-      <h2>Contents</h2>
-      <ol>
-        <li><a href="#market-overview">Market Overview</a></li><li><a href="#top-movers-why">Top Movers &amp; Why</a></li><li><a href="#sec-highlights">SEC Highlights</a></li><li><a href="#deep-dive-team">Deep Dive — TEAM</a></li><li><a href="#watchlist-key-metric">Watchlist &amp; Key Metric</a></li><li><a href="#data-freshness-limitations">Data Freshness &amp; Limitations</a></li>
-        <li><a href="#sources">Source index</a></li>
-        <li><a href="#ledger">Claim &amp; evidence ledger</a></li>
-      </ol>
+    <nav class="toc" aria-label="Contents">
+      <h3>Contents</h3>
+      <ol><li><a href="#market-overview">Market Overview</a></li><li><a href="#top-movers">Top Movers &amp; Why</a></li><li><a href="#sec-highlights">SEC Highlights</a></li><li><a href="#deep-dive">Deep Dive — TEAM</a></li><li><a href="#watchlist">Watchlist &amp; Key Metric</a></li><li><a href="#sources-drawer">Sources</a></li></ol>
     </nav>
-    <main class="article">
-      <section id="market-overview"><h2>Market Overview</h2><p>Public benchmark prints show SPY at 773.26 (+3.51% vs prior close 747.03) and QQQ at 723.03 (+5.09% vs 687.99). VIX last printed at 14.90 (-6.05%). <a class="claim" href="#claim-cl-spy">[cl-spy]</a><a class="claim" href="#claim-cl-qqq">[cl-qqq]</a><a class="claim" href="#claim-cl-vix">[cl-vix]</a></p><p>Benchmark tape showed SPY at +3.51% and QQQ at +5.09% in the latest public prints. <a class="claim" href="#claim-cl-regime">[cl-regime]</a></p></section><section id="top-movers-why"><h2>Top Movers &amp; Why</h2><p>Top live gainer TEAM moved +35.31% to $149.07. Additional gainer DOCS moved +32.62% to $27.40. <a class="claim" href="#claim-cl-gainer0">[cl-gainer0]</a><a class="claim" href="#claim-cl-gainer1">[cl-gainer1]</a></p><p>Top live loser SEZL moved -33.89% to $118.02. <a class="claim" href="#claim-cl-loser0">[cl-loser0]</a></p></section><section id="sec-highlights"><h2>SEC Highlights</h2><p>The SEC current 8-K feed returned 12 recent entries in this scrape, with 8 recent 10-Q entries and 10 Form 4 entries. <a class="claim" href="#claim-cl-8k-count">[cl-8k-count]</a><a class="claim" href="#claim-cl-10q-count">[cl-10q-count]</a><a class="claim" href="#claim-cl-4-count">[cl-4-count]</a></p><p>A highlighted recent 8-K came from K - NexMetals Mining Corp. (accession 0001493152-26-036682). <a class="claim" href="#claim-cl-top-8k">[cl-top-8k]</a></p></section><section id="deep-dive-team"><h2>Deep Dive — TEAM</h2><p>TEAM focus filing is form 8-K, accession 0001650372-26-000031, filed 2026-08-06. <a class="claim" href="#claim-cl-deep-meta">[cl-deep-meta]</a></p><p>Filing excerpt: team-20260806 0001650372 FALSE 0001650372 2026-08-06 2026-08-06 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. <a class="claim" href="#claim-cl-deep-excerpt">[cl-deep-excerpt]</a></p></section><section id="watchlist-key-metric"><h2>Watchlist &amp; Key Metric</h2><p>Next watch item is follow-through in TEAM after the 8-K filed 2026-08-06. <a class="claim" href="#claim-cl-watch">[cl-watch]</a></p></section><section id="data-freshness-limitations"><h2>Data Freshness &amp; Limitations</h2><p>This brief is a point-in-time live scrape from public Yahoo Finance endpoints and SEC EDGAR feeds. SPY last traded at 773.26 with volume 42,664,673. The SEC current 8-K feed returned 12 recent entries in this scrape. <a class="claim" href="#claim-cl-spy">[cl-spy]</a><a class="claim" href="#claim-cl-8k-count">[cl-8k-count]</a></p></section>
+    <main>
+      
+            <section class="desk-section" id="market-overview">
+              <div class="section-head">
+                <div>
+                  <div class="kicker">What the tape did</div>
+                  <h2>Market Overview</h2>
+                </div>
+              </div>
+              
+    <div class="meaning">
+      <p class="print mono">SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924. VIX last printed at 14.90 (-6.05%).</p>
+      <p class='context'><span>Context</span> Benchmarks and volatility are shown together so the session regime is readable at a glance. Benchmark tape showed SPY at +3.51% and QQQ at +5.09% in the latest public prints.</p>
+      <p class='implication'><span>So what</span> Benchmark tape showed SPY at +3.51% and QQQ at +5.09% in the latest public prints.</p>
+      <div class="source-chips"><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a></div>
+    </div>
+    
+              <div class="card-grid benchmarks">
+            <article class="tile benchmark up">
+              <div class="tile-top">
+                <div class="symbol mono">SPY</div>
+                <div class="dir">▲</div>
+              </div>
+              <p class="print mono">SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673.</p>
+              <p class="context">SPY posted a firm up-session versus the prior close in the live package.</p>
+              <p class="implication">Benchmark strength favors a risk-on desk posture until breadth or filings contradict it.</p>
+              <div class="source-chips"><a class="source-chip market" href="https://finance.yahoo.com/quote/SPY" target="_blank" rel="noopener noreferrer">Market · SPY</a><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a></div>
+            </article>
+            
+            <article class="tile benchmark up">
+              <div class="tile-top">
+                <div class="symbol mono">QQQ</div>
+                <div class="dir">▲</div>
+              </div>
+              <p class="print mono">QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924.</p>
+              <p class="context">QQQ posted a firm up-session versus the prior close in the live package.</p>
+              <p class="implication">Benchmark strength favors a risk-on desk posture until breadth or filings contradict it.</p>
+              <div class="source-chips"><a class="source-chip market" href="https://finance.yahoo.com/quote/QQQ" target="_blank" rel="noopener noreferrer">Market · QQQ</a><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a></div>
+            </article>
+            
+            <article class="tile benchmark down">
+              <div class="tile-top">
+                <div class="symbol mono">VIX</div>
+                <div class="dir">▼</div>
+              </div>
+              <p class="print mono">VIX last printed at 14.90 (-6.05%).</p>
+              <p class="context">VIX posted a firm down-session versus the prior close in the live package.</p>
+              <p class="implication">Volatility easing can support risk appetite, but it does not validate single-name spikes by itself.</p>
+              <div class="source-chips"><a class="source-chip market" href="https://finance.yahoo.com/quote/%5EVIX" target="_blank" rel="noopener noreferrer">Market · VIX</a><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a></div>
+            </article>
+            </div>
+            </section>
+            
+            <section class="desk-section" id="top-movers">
+              <div class="section-head">
+                <div>
+                  <div class="kicker">Where attention concentrates</div>
+                  <h2>Top Movers &amp; Why</h2>
+                </div>
+              </div>
+              
+    <div class="meaning">
+      <p class="print mono">Top live gainer TEAM moved +35.31% to $149.07. Additional gainer DOCS moved +32.62% to $27.40. Top live loser SEZL moved -33.89% to $118.02.</p>
+      <p class='context'><span>Context</span> These names screened from the live gainers/losers tape. Catalyst status is filing-linked only when the package contains a matching filing claim.</p>
+      <p class='implication'><span>So what</span> Treat single-name spikes as attention signals until a primary filing or verified catalyst is attached.</p>
+      <div class="source-chips"><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a></div>
+    </div>
+    
+              <div class="card-grid movers">
+            <article class="tile mover gainer">
+              <div class="tile-top">
+                <div class="symbol mono">TEAM</div>
+                <div class="pill filing">Catalyst: filing in package</div>
+              </div>
+              <p class="print mono">Top live gainer TEAM moved +35.31% to $149.07.</p>
+              <p class="context"><span>Why it screened</span> TEAM is linked to today&#x27;s deep-dive filing package.</p>
+              <p class="implication"><span>So what</span> Priority name: confirm the filing details before extrapolating the move.</p>
+              <div class="source-chips"><a class="source-chip sec" href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">SEC · Filing</a><a class="source-chip market" href="https://finance.yahoo.com/quote/TEAM" target="_blank" rel="noopener noreferrer">Market · TEAM</a><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a></div>
+            </article>
+            
+            <article class="tile mover gainer">
+              <div class="tile-top">
+                <div class="symbol mono">DOCS</div>
+                <div class="pill none">Catalyst: none in package</div>
+              </div>
+              <p class="print mono">Additional gainer DOCS moved +32.62% to $27.40.</p>
+              <p class="context"><span>Why it screened</span> DOCS screened on the live gainer tape in this package.</p>
+              <p class="implication"><span>So what</span> No primary catalyst claim is attached in-package — treat as tape attention until filing/news is linked.</p>
+              <div class="source-chips"><a class="source-chip market" href="https://finance.yahoo.com/quote/DOCS" target="_blank" rel="noopener noreferrer">Market · DOCS</a><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a></div>
+            </article>
+            
+            <article class="tile mover loser">
+              <div class="tile-top">
+                <div class="symbol mono">SEZL</div>
+                <div class="pill none">Catalyst: none in package</div>
+              </div>
+              <p class="print mono">Top live loser SEZL moved -33.89% to $118.02.</p>
+              <p class="context"><span>Why it screened</span> SEZL screened on the live loser tape in this package.</p>
+              <p class="implication"><span>So what</span> No primary catalyst claim is attached in-package — treat as tape attention until filing/news is linked.</p>
+              <div class="source-chips"><a class="source-chip market" href="https://finance.yahoo.com/quote/SEZL" target="_blank" rel="noopener noreferrer">Market · SEZL</a><a class="source-chip market" href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Market · Tape</a></div>
+            </article>
+            </div>
+            </section>
+            
+            <section class="desk-section" id="sec-highlights">
+              <div class="section-head">
+                <div>
+                  <div class="kicker">What filings hit the wire</div>
+                  <h2>SEC Highlights</h2>
+                </div>
+              </div>
+              
+    <div class="meaning">
+      <p class="print mono">The SEC current 8-K feed returned 12 recent entries in this scrape. The SEC current 10-Q feed returned 8 recent entries in this scrape. The SEC current Form 4 feed returned 10 recent entries in this scrape. A highlighted recent 8-K came from K - NexMetals Mining Corp. (accession 0001493152-26-036682).</p>
+      <p class='context'><span>Context</span> The SEC current 8-K feed returned 12 recent entries in this scrape. The SEC current 10-Q feed returned 8 recent entries in this scrape. The SEC current Form 4 feed returned 10 recent entries in this scrape. A highlighted recent 8-K came from K - NexMetals Mining Corp. (accession 0001493152-26-036682).</p>
+      <p class='implication'><span>So what</span> Filing volume is a radar, not a verdict — open the HTML before upgrading a name to a thesis.</p>
+      <div class="source-chips"><a class="source-chip sec" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom" target="_blank" rel="noopener noreferrer">SEC · Filing</a></div>
+    </div>
+    
+              <div class="card-grid filings">
+            <article class="tile filing">
+              <div class="tile-top">
+                <div class="symbol">Highlighted 8-K</div>
+                <div class="pill filing">SEC</div>
+              </div>
+              <p class="print mono">A highlighted recent 8-K came from K - NexMetals Mining Corp. (accession 0001493152-26-036682).</p>
+              <p class="context"><span>Context</span> Recent current-feed 8-K captured in today&#x27;s SEC scrape.</p>
+              <p class="implication"><span>So what</span> Open the primary filing before treating the headline as thesis-changing.</p>
+              <div class="source-chips"><a class="source-chip sec" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom" target="_blank" rel="noopener noreferrer">SEC · Filing</a></div>
+            </article>
+            
+            <article class="tile filing">
+              <div class="tile-top">
+                <div class="symbol">Deep dive · TEAM</div>
+                <div class="pill filing">SEC</div>
+              </div>
+              <p class="print mono">TEAM focus filing is form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</p>
+              <p class="context"><span>Context</span> TEAM is the session deep-dive issuer. TEAM focus filing is form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</p>
+              <p class="implication"><span>So what</span> Use the filing HTML for details; the brief only carries grounded excerpt/metadata claims.</p>
+              <div class="source-chips"><a class="source-chip sec" href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">SEC · Filing HTML</a><a class="source-chip sec" href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">SEC · Filing</a></div>
+            </article>
+            </div>
+            </section>
+            
+            <section class="desk-section" id="deep-dive">
+              <div class="section-head">
+                <div>
+                  <div class="kicker">Primary case study</div>
+                  <h2>Deep Dive — TEAM</h2>
+                </div>
+              </div>
+              
+    <div class="meaning">
+      <p class="print mono">TEAM focus filing is form 8-K, accession 0001650372-26-000031, filed 2026-08-06. Filing excerpt: team-20260806 0001650372 FALSE 0001650372 2026-08-06 2026-08-06 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C.</p>
+      <p class='context'><span>Context</span> This section is the session&#x27;s forensic focus. Read the issuer filing directly for event details beyond grounded metadata/excerpt claims.</p>
+      <p class='implication'><span>So what</span> Next watch item is follow-through in TEAM after the 8-K filed 2026-08-06.</p>
+      <div class="source-chips"><a class="source-chip sec" href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">SEC · Filing</a></div>
+    </div>
+    
+              
+            </section>
+            
+            <section class="desk-section" id="watchlist">
+              <div class="section-head">
+                <div>
+                  <div class="kicker">What to monitor next</div>
+                  <h2>Watchlist &amp; Key Metric</h2>
+                </div>
+              </div>
+              
+    <div class="meaning">
+      <p class="print mono">Next watch item is follow-through in TEAM after the 8-K filed 2026-08-06.</p>
+      <p class='context'><span>Context</span> A good desk ends on one falsifiable next check, not a pile of open questions.</p>
+      <p class='implication'><span>So what</span> If the watch item breaks, revisit both the popular and contrarian frames on the Ideas desk.</p>
+      <div class="source-chips"><a class="source-chip sec" href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">SEC · Filing</a></div>
+    </div>
+    
+              
+            </section>
+            
 
-      <section id="sources">
-        <h2>Source Index</h2>
-        <p>Every publishable statement in this report traces to one of these hashed snapshots.</p>
+      <details class="drawer" id="sources-drawer">
+        <summary>Sources &amp; evidence drawer · open for provenance</summary>
+        <p class="meta">Primary reading uses source chips above. This drawer keeps the full fail-closed ledger available without blocking the desk flow.</p>
+        <h3>Source index</h3>
         <table>
           <thead><tr><th>ID</th><th>Title</th><th>Publisher</th><th>Tier</th><th>Hash</th></tr></thead>
-          <tbody><tr><td>src-market</td><td><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a></td><td>Yahoo Finance (public endpoints)</td><td>2</td><td><code>8daf1cd9f39b…</code></td></tr><tr><td>src-sec-feed</td><td><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a></td><td>U.S. Securities and Exchange Commission</td><td>1</td><td><code>8b411f5568b9…</code></td></tr><tr><td>src-deep</td><td><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm">TEAM focus filing excerpt (8-K)</a></td><td>U.S. Securities and Exchange Commission</td><td>1</td><td><code>fe013a8c02b9…</code></td></tr></tbody>
+          <tbody><tr><td class='mono'>src-market</td><td><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a></td><td>Yahoo Finance (public endpoints)</td><td>2</td><td class='mono'><code>8daf1cd9f39b…</code></td></tr><tr><td class='mono'>src-sec-feed</td><td><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom" target="_blank" rel="noopener noreferrer">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a></td><td>U.S. Securities and Exchange Commission</td><td>1</td><td class='mono'><code>8b411f5568b9…</code></td></tr><tr><td class='mono'>src-deep</td><td><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">TEAM focus filing excerpt (8-K)</a></td><td>U.S. Securities and Exchange Commission</td><td>1</td><td class='mono'><code>fe013a8c02b9…</code></td></tr></tbody>
         </table>
-      </section>
-
-      <section class="ledger" id="ledger">
-        <h2>Claim &amp; Evidence Ledger</h2>
-        <p>Click any gold claim marker in the article to jump here. Expand the supporting quote and source path before acting on a statement.</p>
-        <article class="claim-card" id="claim-cl-spy"><div class="claim-head"><h3>cl-spy</h3><span class="pill">fact</span></div><p>SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · SPY chart</span><blockquote>SPY last price 773.26 versus previous close 747.03, change +3.51%, volume 42,664,673.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-qqq"><div class="claim-head"><h3>cl-qqq</h3><span class="pill">fact</span></div><p>QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · QQQ chart</span><blockquote>QQQ last price 723.03 versus previous close 687.99, change +5.09%, volume 29,234,924.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-vix"><div class="claim-head"><h3>cl-vix</h3><span class="pill">fact</span></div><p>VIX last printed at 14.90 (-6.05%).</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · VIX chart</span><blockquote>VIX last price 14.90, change -6.05%.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-gainer0"><div class="claim-head"><h3>cl-gainer0</h3><span class="pill">fact</span></div><p>Top live gainer TEAM moved +35.31% to $149.07.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · Day gainers</span><blockquote>- TEAM: +35.31% to $149.07, volume 20,000,013.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-gainer1"><div class="claim-head"><h3>cl-gainer1</h3><span class="pill">fact</span></div><p>Additional gainer DOCS moved +32.62% to $27.40.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · Day gainers</span><blockquote>- DOCS: +32.62% to $27.40, volume 63,610,166.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-loser0"><div class="claim-head"><h3>cl-loser0</h3><span class="pill">fact</span></div><p>Top live loser SEZL moved -33.89% to $118.02.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · Day losers</span><blockquote>- SEZL: -33.89% to $118.02, volume 4,199,070.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-8k-count"><div class="claim-head"><h3>cl-8k-count</h3><span class="pill">fact</span></div><p>The SEC current 8-K feed returned 12 recent entries in this scrape.</p><ul><li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a> <span class="meta">Tier 1 · 8-K feed</span><blockquote>8-K feed updated entries captured: 12.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-10q-count"><div class="claim-head"><h3>cl-10q-count</h3><span class="pill">fact</span></div><p>The SEC current 10-Q feed returned 8 recent entries in this scrape.</p><ul><li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a> <span class="meta">Tier 1 · 10-Q feed</span><blockquote>10-Q feed updated entries captured: 8.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-4-count"><div class="claim-head"><h3>cl-4-count</h3><span class="pill">fact</span></div><p>The SEC current Form 4 feed returned 10 recent entries in this scrape.</p><ul><li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a> <span class="meta">Tier 1 · Form 4 feed</span><blockquote>Form 4 feed updated entries captured: 10.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-top-8k"><div class="claim-head"><h3>cl-top-8k</h3><span class="pill">fact</span></div><p>A highlighted recent 8-K came from K - NexMetals Mining Corp. (accession 0001493152-26-036682).</p><ul><li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a> <span class="meta">Tier 1 · Selected 8-K</span><blockquote>- K - NexMetals Mining Corp. filed 8-K (accession 0001493152-26-036682). Filed: 2026-08-07 AccNo: 0001493152-26-036682 Size: 61 MB Item 7.01: Regulation FD Disclosure Item 9.01: Financial Statements and Exhibits</blockquote></li></ul></article><article class="claim-card" id="claim-cl-deep-meta"><div class="claim-head"><h3>cl-deep-meta</h3><span class="pill">fact</span></div><p>TEAM focus filing is form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</p><ul><li><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm">TEAM focus filing excerpt (8-K)</a> <span class="meta">Tier 1 · Focus filing metadata</span><blockquote>Focus filing form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</blockquote></li><li><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm">TEAM focus filing excerpt (8-K)</a> <span class="meta">Tier 1 · Issuer</span><blockquote>MarketForge LIVE deep-dive package for TEAM / Atlassian Corp.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-deep-excerpt"><div class="claim-head"><h3>cl-deep-excerpt</h3><span class="pill">fact</span></div><p>Filing excerpt: team-20260806 0001650372 FALSE 0001650372 2026-08-06 2026-08-06 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C.</p><ul><li><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm">TEAM focus filing excerpt (8-K)</a> <span class="meta">Tier 1 · Filing excerpt</span><blockquote>team-20260806 0001650372 FALSE 0001650372 2026-08-06 2026-08-06 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-regime"><div class="claim-head"><h3>cl-regime</h3><span class="pill">interpretation</span></div><p>Benchmark tape showed SPY at +3.51% and QQQ at +5.09% in the latest public prints.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · SPY chart</span><blockquote>SPY last price 773.26 versus previous close 747.03, change +3.51%, volume 42,664,673.</blockquote></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · QQQ chart</span><blockquote>QQQ last price 723.03 versus previous close 687.99, change +5.09%, volume 29,234,924.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-watch"><div class="claim-head"><h3>cl-watch</h3><span class="pill">interpretation</span></div><p>Next watch item is follow-through in TEAM after the 8-K filed 2026-08-06.</p><ul><li><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm">TEAM focus filing excerpt (8-K)</a> <span class="meta">Tier 1 · Focus filing metadata</span><blockquote>Focus filing form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</blockquote></li></ul></article>
-      </section>
+        <h3 style="margin-top:18px">Claim ledger</h3>
+        <article class="claim-card" id="claim-cl-spy"><div class="claim-head"><h3 class="mono">cl-spy</h3><span class="pill">fact</span></div><p>SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · SPY chart</span><blockquote>SPY last price 773.26 versus previous close 747.03, change +3.51%, volume 42,664,673.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-qqq"><div class="claim-head"><h3 class="mono">cl-qqq</h3><span class="pill">fact</span></div><p>QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · QQQ chart</span><blockquote>QQQ last price 723.03 versus previous close 687.99, change +5.09%, volume 29,234,924.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-vix"><div class="claim-head"><h3 class="mono">cl-vix</h3><span class="pill">fact</span></div><p>VIX last printed at 14.90 (-6.05%).</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · VIX chart</span><blockquote>VIX last price 14.90, change -6.05%.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-gainer0"><div class="claim-head"><h3 class="mono">cl-gainer0</h3><span class="pill">fact</span></div><p>Top live gainer TEAM moved +35.31% to $149.07.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · Day gainers</span><blockquote>- TEAM: +35.31% to $149.07, volume 20,000,013.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-gainer1"><div class="claim-head"><h3 class="mono">cl-gainer1</h3><span class="pill">fact</span></div><p>Additional gainer DOCS moved +32.62% to $27.40.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · Day gainers</span><blockquote>- DOCS: +32.62% to $27.40, volume 63,610,166.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-loser0"><div class="claim-head"><h3 class="mono">cl-loser0</h3><span class="pill">fact</span></div><p>Top live loser SEZL moved -33.89% to $118.02.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · Day losers</span><blockquote>- SEZL: -33.89% to $118.02, volume 4,199,070.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-8k-count"><div class="claim-head"><h3 class="mono">cl-8k-count</h3><span class="pill">fact</span></div><p>The SEC current 8-K feed returned 12 recent entries in this scrape.</p><ul><li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom" target="_blank" rel="noopener noreferrer">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a> <span class="meta">Tier 1 · 8-K feed</span><blockquote>8-K feed updated entries captured: 12.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-10q-count"><div class="claim-head"><h3 class="mono">cl-10q-count</h3><span class="pill">fact</span></div><p>The SEC current 10-Q feed returned 8 recent entries in this scrape.</p><ul><li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom" target="_blank" rel="noopener noreferrer">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a> <span class="meta">Tier 1 · 10-Q feed</span><blockquote>10-Q feed updated entries captured: 8.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-4-count"><div class="claim-head"><h3 class="mono">cl-4-count</h3><span class="pill">fact</span></div><p>The SEC current Form 4 feed returned 10 recent entries in this scrape.</p><ul><li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom" target="_blank" rel="noopener noreferrer">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a> <span class="meta">Tier 1 · Form 4 feed</span><blockquote>Form 4 feed updated entries captured: 10.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-top-8k"><div class="claim-head"><h3 class="mono">cl-top-8k</h3><span class="pill">fact</span></div><p>A highlighted recent 8-K came from K - NexMetals Mining Corp. (accession 0001493152-26-036682).</p><ul><li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&amp;type=8-K&amp;owner=include&amp;count=20&amp;output=atom" target="_blank" rel="noopener noreferrer">SEC EDGAR current filings feeds (8-K / 10-Q / Form 4)</a> <span class="meta">Tier 1 · Selected 8-K</span><blockquote>- K - NexMetals Mining Corp. filed 8-K (accession 0001493152-26-036682). Filed: 2026-08-07 AccNo: 0001493152-26-036682 Size: 61 MB Item 7.01: Regulation FD Disclosure Item 9.01: Financial Statements and Exhibits</blockquote></li></ul></article><article class="claim-card" id="claim-cl-deep-meta"><div class="claim-head"><h3 class="mono">cl-deep-meta</h3><span class="pill">fact</span></div><p>TEAM focus filing is form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</p><ul><li><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">TEAM focus filing excerpt (8-K)</a> <span class="meta">Tier 1 · Focus filing metadata</span><blockquote>Focus filing form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</blockquote></li><li><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">TEAM focus filing excerpt (8-K)</a> <span class="meta">Tier 1 · Issuer</span><blockquote>MarketForge LIVE deep-dive package for TEAM / Atlassian Corp.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-deep-excerpt"><div class="claim-head"><h3 class="mono">cl-deep-excerpt</h3><span class="pill">fact</span></div><p>Filing excerpt: team-20260806 0001650372 FALSE 0001650372 2026-08-06 2026-08-06 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C.</p><ul><li><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">TEAM focus filing excerpt (8-K)</a> <span class="meta">Tier 1 · Filing excerpt</span><blockquote>team-20260806 0001650372 FALSE 0001650372 2026-08-06 2026-08-06 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-regime"><div class="claim-head"><h3 class="mono">cl-regime</h3><span class="pill">interpretation</span></div><p>Benchmark tape showed SPY at +3.51% and QQQ at +5.09% in the latest public prints.</p><ul><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · SPY chart</span><blockquote>SPY last price 773.26 versus previous close 747.03, change +3.51%, volume 42,664,673.</blockquote></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&amp;range=5d" target="_blank" rel="noopener noreferrer">Live market snapshot (Yahoo Finance charts + screeners)</a> <span class="meta">Tier 2 · QQQ chart</span><blockquote>QQQ last price 723.03 versus previous close 687.99, change +5.09%, volume 29,234,924.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-watch"><div class="claim-head"><h3 class="mono">cl-watch</h3><span class="pill">interpretation</span></div><p>Next watch item is follow-through in TEAM after the 8-K filed 2026-08-06.</p><ul><li><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037226000031/team-20260806.htm" target="_blank" rel="noopener noreferrer">TEAM focus filing excerpt (8-K)</a> <span class="meta">Tier 1 · Focus filing metadata</span><blockquote>Focus filing form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</blockquote></li></ul></article>
+      </details>
 
       <p class="disclaimer">Educational market-intelligence demonstration only. Not investment advice. Figures are captured from public endpoints at the stated cutoff and may be delayed, revised, or incomplete. Always verify primary SEC filings and licensed market data before making decisions.</p>
-      <footer>Generated by MarketForge · fail-closed claim lineage · educational use only</footer>
+      <footer>MarketForge Terminal Research · educational only · not investment advice</footer>
     </main>
   </div>
 </div>

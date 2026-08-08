@@ -216,6 +216,12 @@ def _validate_content_claim_refs(content: dict[str, Any], claim_index: dict[str,
             raise ValidationError(f"article summary references unknown claim: {claim_id}")
     grounded_summary = "\n".join(claim_index[claim_id]["text"] for claim_id in summary_refs)
     _validate_numeric_grounding(article.get("summary", ""), grounded_summary, "summary")
+
+    # Optional Phase-1 desk presentation layer.
+    desk = article.get("desk")
+    if desk:
+        _validate_desk_layer(desk, claim_index)
+
     for section in article.get("sections", []):
         for paragraph in section.get("paragraphs", []):
             refs = paragraph.get("claim_ids") or []
@@ -226,6 +232,9 @@ def _validate_content_claim_refs(content: dict[str, Any], claim_index: dict[str,
                     raise ValidationError(f"article references unknown claim: {claim_id}")
             grounded_claims = "\n".join(claim_index[claim_id]["text"] for claim_id in refs)
             _validate_numeric_grounding(paragraph.get("text", ""), grounded_claims, "article")
+            for field in ("context_line", "implication_line", "print_line"):
+                if paragraph.get(field):
+                    _validate_numeric_grounding(str(paragraph[field]), grounded_claims, f"article {field}")
 
     for post in (content.get("x_thread") or {}).get("posts", []):
         refs = post.get("claim_ids") or []
@@ -236,6 +245,47 @@ def _validate_content_claim_refs(content: dict[str, Any], claim_index: dict[str,
                 raise ValidationError(f"x thread references unknown claim: {claim_id}")
         grounded_claims = "\n".join(claim_index[claim_id]["text"] for claim_id in refs)
         _validate_numeric_grounding(post.get("text", ""), grounded_claims, "x post")
+
+
+def _validate_desk_layer(desk: dict[str, Any], claim_index: dict[str, dict[str, Any]]) -> None:
+    summary_refs = desk.get("summary_claim_ids") or []
+    if not summary_refs:
+        raise ValidationError("desk summary has no claim ids")
+    for claim_id in summary_refs:
+        if claim_id not in claim_index:
+            raise ValidationError(f"desk summary references unknown claim: {claim_id}")
+    grounded = "\n".join(claim_index[cid]["text"] for cid in summary_refs)
+    _validate_numeric_grounding(str(desk.get("summary", "")), grounded, "desk summary")
+
+    for section in desk.get("sections") or []:
+        for block in section.get("blocks") or []:
+            refs = block.get("claim_ids") or []
+            if not refs:
+                raise ValidationError("desk block has no claim ids")
+            for claim_id in refs:
+                if claim_id not in claim_index:
+                    raise ValidationError(f"desk block references unknown claim: {claim_id}")
+            grounded_block = "\n".join(claim_index[cid]["text"] for cid in refs)
+            for field in ("print_line", "context_line", "implication_line"):
+                if block.get(field):
+                    _validate_numeric_grounding(str(block[field]), grounded_block, f"desk {field}")
+            for link in block.get("links") or []:
+                if not str(link.get("url", "")).startswith("https://"):
+                    raise ValidationError("desk block link must be https")
+        for card in section.get("cards") or []:
+            refs = card.get("claim_ids") or []
+            if not refs:
+                raise ValidationError("desk card has no claim ids")
+            for claim_id in refs:
+                if claim_id not in claim_index:
+                    raise ValidationError(f"desk card references unknown claim: {claim_id}")
+            grounded_card = "\n".join(claim_index[cid]["text"] for cid in refs)
+            for field in ("print_line", "context_line", "implication_line"):
+                if card.get(field):
+                    _validate_numeric_grounding(str(card[field]), grounded_card, f"desk card {field}")
+            for link in card.get("links") or []:
+                if not str(link.get("url", "")).startswith("https://"):
+                    raise ValidationError("desk card link must be https")
 
 
 def validate_run_bundle(

@@ -41,6 +41,10 @@ uv run python scripts/run_live_briefing.py
 # Dual thesis supplement (Bull/Bear × Popular/Contrarian) from approved bundle
 uv run python scripts/run_dual_thesis.py runs/<run-id>/run-bundle.json
 # Open: site/output/dual-thesis.html  and  site/output/hub.html
+
+# Phase 1 desk render (meaning + cards + source chips)
+uv run python scripts/run_phase1_desk.py runs/<run-id>/run-bundle.json
+# Open: site/output/index.html
 ```
 
 ## Live site
