@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dual Thesis — live-20260808-170443</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg:#071018; --panel:#101d27; --line:#223746; --text:#e8f0f5; --muted:#96a8b4;
+  --bull:#7be0bd; --bear:#ff8f8f; --claim:#ffca64; --link:#81bff8;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:radial-gradient(circle at top,#122033 0%, var(--bg) 45%); color:var(--text); }
+.shell { max-width:1100px; margin:auto; padding:28px 18px 96px; }
+.topbar { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); margin-bottom:18px; }
+.badge { border:1px solid var(--line); border-radius:999px; padding:.4rem .8rem; background:rgba(16,29,39,.85); }
+.badge strong { color:var(--bull); }
+.hero { background:rgba(16,29,39,.9); border:1px solid var(--line); border-radius:22px; padding:26px; }
+h1 { margin:10px 0 12px; font-size:clamp(1.8rem,4vw,3rem); letter-spacing:-.03em; }
+.summary { color:#c5d4de; line-height:1.75; font-size:1.08rem; }
+.claim { color:var(--claim); text-decoration:none; margin-left:.15rem; }
+.scoreboard { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:22px 0; }
+.score { background:rgba(7,16,24,.55); border:1px solid var(--line); border-radius:14px; padding:14px; }
+.score span { display:block; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; }
+.score strong { display:block; margin-top:6px; font-size:1.4rem; }
+.score.bull strong { color:var(--bull); }
+.score.bear strong { color:var(--bear); }
+.grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:18px; }
+.frame { background:rgba(16,29,39,.72); border:1px solid var(--line); border-radius:18px; padding:18px; }
+.frame.bull { border-top:3px solid var(--bull); }
+.frame.bear { border-top:3px solid var(--bear); }
+.frame-head { display:flex; justify-content:space-between; gap:10px; align-items:start; }
+.frame h3 { margin:0; }
+.frame h4 { color:var(--muted); font-size:.9rem; text-transform:uppercase; letter-spacing:.06em; }
+.tags { display:flex; gap:6px; flex-wrap:wrap; }
+.tag { border-radius:999px; padding:.2rem .55rem; font-size:.72rem; text-transform:uppercase; border:1px solid var(--line); color:var(--muted); }
+.tag.stance { color:#071018; border:none; }
+.frame.bull .tag.stance { background:var(--bull); }
+.frame.bear .tag.stance { background:var(--bear); }
+.tag.style { color:var(--claim); }
+p { line-height:1.75; color:#dce7ee; }
+table { width:100%; border-collapse:collapse; margin-top:12px; background:rgba(16,29,39,.55); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+td { width:50%; vertical-align:top; padding:14px; border-bottom:1px solid var(--line); }
+.section { margin-top:28px; background:rgba(16,29,39,.55); border:1px solid var(--line); border-radius:18px; padding:8px 18px 18px; }
+.section h2 { color:var(--bull); }
+.claim-card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px; margin:12px 0; }
+.claim-card h3 { margin:0; color:var(--claim); }
+.meta { color:var(--muted); font-size:.82rem; text-transform:uppercase; }
+.disclaimer { margin-top:24px; color:var(--muted); border:1px solid var(--line); border-radius:16px; padding:16px 18px; line-height:1.7; }
+a { color:var(--link); }
+@media (max-width:900px) { .grid { grid-template-columns:1fr; } td { display:block; width:100%; } }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div class="badge"><strong>MarketForge</strong> Dual Thesis</div>
+    <div>Parent run <code>live-20260808-170443</code> · as of 2026-08-08T17:04:43Z</div>
+  </div>
+
+  <header class="hero">
+    <div class="badge">Supplement to: MarketForge Live Brief — August 08, 2026 17:04 UTC</div>
+    <h1>Bull &amp; Bear · Popular &amp; Contrarian</h1>
+    <p class="summary">Dual-thesis supplement for the approved MarketForge briefing. Popular direction inferred as risk on. SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924. VIX last printed at 14.90 (-6.05%). Top live loser SEZL moved -33.89% to $118.02. <a class="claim" href="#claim-cl-spy">[cl-spy]</a><a class="claim" href="#claim-cl-qqq">[cl-qqq]</a><a class="claim" href="#claim-cl-vix">[cl-vix]</a><a class="claim" href="#claim-cl-loser0">[cl-loser0]</a></p>
+    <p class="summary">Inferred popular direction: <strong>risk on</strong></p>
+    
+    <div class="scoreboard">
+      <div class="score bull"><span>Bull-supporting claims</span><strong>5</strong></div>
+      <div class="score bear"><span>Bear-supporting claims</span><strong>4</strong></div>
+      <div class="score mixed"><span>Contested</span><strong>0</strong></div>
+      <div class="score neutral"><span>Neutral</span><strong>5</strong></div>
+    </div>
+    
+    <p><a href="index.html">← Back to daily brief</a></p>
+  </header>
+
+  <section class="section">
+    <h2>Four Frames</h2>
+    <div class="grid">
+      
+        <article class="frame bull popular" id="popular_bull">
+          <div class="frame-head">
+            <h3>Popular Bull</h3>
+            <div class="tags">
+              <span class="tag stance">bull</span>
+              <span class="tag style">popular</span>
+            </div>
+          </div>
+          <p>The approved tape claims skew risk-on / bullish. A popular bull reading emphasizes: SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924. <a class="claim" href="#claim-cl-spy">[cl-spy]</a><a class="claim" href="#claim-cl-qqq">[cl-qqq]</a></p><p>In this frame, leadership and benchmark strength are treated as confirmation rather than a trap. Top live gainer TEAM moved +35.31% to $149.07. Additional gainer DOCS moved +32.62% to $27.40. <a class="claim" href="#claim-cl-gainer0">[cl-gainer0]</a><a class="claim" href="#claim-cl-gainer1">[cl-gainer1]</a></p>
+          <h4>What would falsify this</h4>
+          <ul><li>This bull reading would weaken if the bear-supporting claims reassert control of the tape. VIX last printed at 14.90 (-6.05%). <a class="claim" href="#claim-cl-vix">[cl-vix]</a></li></ul>
+        </article>
+        
+      
+        <article class="frame bull contrarian" id="contrarian_bull">
+          <div class="frame-head">
+            <h3>Contrarian Bull</h3>
+            <div class="tags">
+              <span class="tag stance">bull</span>
+              <span class="tag style">contrarian</span>
+            </div>
+          </div>
+          <p>A contrarian frame asks whether strength is extended or selective. A contrarian bull reading still finds constructive evidence: SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924. <a class="claim" href="#claim-cl-spy">[cl-spy]</a><a class="claim" href="#claim-cl-qqq">[cl-qqq]</a></p><p>This stance argues that visible weakness or contested signals do not automatically invalidate upside follow-through. VIX last printed at 14.90 (-6.05%). <a class="claim" href="#claim-cl-vix">[cl-vix]</a></p>
+          <h4>What would falsify this</h4>
+          <ul><li>Contrarian bull would be challenged if downside claims broaden beyond isolated losers. VIX last printed at 14.90 (-6.05%). <a class="claim" href="#claim-cl-vix">[cl-vix]</a></li></ul>
+        </article>
+        
+      
+        <article class="frame bear popular" id="popular_bear">
+          <div class="frame-head">
+            <h3>Popular Bear</h3>
+            <div class="tags">
+              <span class="tag stance">bear</span>
+              <span class="tag style">popular</span>
+            </div>
+          </div>
+          <p>The approved tape claims skew risk-on / bullish. A popular bear reading stresses the weakest approved evidence: VIX last printed at 14.90 (-6.05%). Top live loser SEZL moved -33.89% to $118.02. <a class="claim" href="#claim-cl-vix">[cl-vix]</a><a class="claim" href="#claim-cl-loser0">[cl-loser0]</a></p><p>Even when benchmarks are firm, this frame treats sharp single-name downside and contested signals as risk markers rather than noise. VIX last printed at 14.90 (-6.05%). <a class="claim" href="#claim-cl-vix">[cl-vix]</a></p>
+          <h4>What would falsify this</h4>
+          <ul><li>Popular bear would be challenged if bull-supporting claims continue to dominate breadth and leadership. SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. <a class="claim" href="#claim-cl-spy">[cl-spy]</a></li></ul>
+        </article>
+        
+      
+        <article class="frame bear contrarian" id="contrarian_bear">
+          <div class="frame-head">
+            <h3>Contrarian Bear</h3>
+            <div class="tags">
+              <span class="tag stance">bear</span>
+              <span class="tag style">contrarian</span>
+            </div>
+          </div>
+          <p>A contrarian frame asks whether strength is extended or selective. A contrarian bear reading fades strength by asking what the winners are pricing in too quickly. SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. VIX last printed at 14.90 (-6.05%). <a class="claim" href="#claim-cl-vix">[cl-vix]</a><a class="claim" href="#claim-cl-spy">[cl-spy]</a></p><p>This stance does not deny the bull evidence; it reinterprets it as potential late-move vulnerability. SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. <a class="claim" href="#claim-cl-spy">[cl-spy]</a></p>
+          <h4>What would falsify this</h4>
+          <ul><li>Contrarian bear would be challenged if upside claims keep expanding without deteriorating breadth claims. SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. <a class="claim" href="#claim-cl-spy">[cl-spy]</a></li></ul>
+        </article>
+        
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Dialectic</h2>
+    <p>Point / counterpoint using only approved claims. Neither side is allowed unsupported ammunition.</p>
+    <table><tr><td><strong>Bull point</strong><p>SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673. <a class="claim" href="#claim-cl-spy">[cl-spy]</a></p></td><td><strong>Bear counter</strong><p>VIX last printed at 14.90 (-6.05%). <a class="claim" href="#claim-cl-vix">[cl-vix]</a></p></td></tr><tr><td><strong>Bull point</strong><p>QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924. <a class="claim" href="#claim-cl-qqq">[cl-qqq]</a></p></td><td><strong>Bear counter</strong><p>Top live loser SEZL moved -33.89% to $118.02. <a class="claim" href="#claim-cl-loser0">[cl-loser0]</a></p></td></tr><tr><td><strong>Bull point</strong><p>Top live gainer TEAM moved +35.31% to $149.07. <a class="claim" href="#claim-cl-gainer0">[cl-gainer0]</a></p></td><td><strong>Bear counter</strong><p>A highlighted recent 8-K came from K - NexMetals Mining Corp. (accession 0001493152-26-036682). <a class="claim" href="#claim-cl-top-8k">[cl-top-8k]</a></p></td></tr></table>
+  </section>
+
+  <section class="section">
+    <h2>Claim Ledger (parent brief)</h2>
+    <article class="claim-card" id="claim-cl-spy"><h3>cl-spy</h3><p>SPY last traded at 773.26, +3.51% versus previous close 747.03, volume 42,664,673.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-qqq"><h3>cl-qqq</h3><p>QQQ last traded at 723.03, +5.09% versus previous close 687.99, volume 29,234,924.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-vix"><h3>cl-vix</h3><p>VIX last printed at 14.90 (-6.05%).</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-gainer0"><h3>cl-gainer0</h3><p>Top live gainer TEAM moved +35.31% to $149.07.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-gainer1"><h3>cl-gainer1</h3><p>Additional gainer DOCS moved +32.62% to $27.40.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-loser0"><h3>cl-loser0</h3><p>Top live loser SEZL moved -33.89% to $118.02.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-8k-count"><h3>cl-8k-count</h3><p>The SEC current 8-K feed returned 12 recent entries in this scrape.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-10q-count"><h3>cl-10q-count</h3><p>The SEC current 10-Q feed returned 8 recent entries in this scrape.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-4-count"><h3>cl-4-count</h3><p>The SEC current Form 4 feed returned 10 recent entries in this scrape.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-top-8k"><h3>cl-top-8k</h3><p>A highlighted recent 8-K came from K - NexMetals Mining Corp. (accession 0001493152-26-036682).</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-deep-meta"><h3>cl-deep-meta</h3><p>TEAM focus filing is form 8-K, accession 0001650372-26-000031, filed 2026-08-06.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-deep-excerpt"><h3>cl-deep-excerpt</h3><p>Filing excerpt: team-20260806 0001650372 FALSE 0001650372 2026-08-06 2026-08-06 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C.</p><div class="meta">fact</div></article><article class="claim-card" id="claim-cl-regime"><h3>cl-regime</h3><p>Benchmark tape showed SPY at +3.51% and QQQ at +5.09% in the latest public prints.</p><div class="meta">interpretation</div></article><article class="claim-card" id="claim-cl-watch"><h3>cl-watch</h3><p>Next watch item is follow-through in TEAM after the 8-K filed 2026-08-06.</p><div class="meta">interpretation</div></article>
+  </section>
+
+  <p class="disclaimer">Educational dual-thesis analysis only. Not investment advice. Bull/bear and popular/contrarian frames are interpretive readings of an approved MarketForge claim ledger. They do not add facts, prices, or filings beyond that ledger.</p>
+</div>
+</body>
+</html>
