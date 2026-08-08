@@ -1,0 +1,48 @@
+run:
+  timezone: America/New_York
+  modes: [premarket, daily_close]
+  initial_publish_policy: human_approval_required
+  universe: sp500_plus_watchlist
+  max_deep_dives: 3
+
+sec:
+  user_agent_env: SEC_USER_AGENT
+  max_requests_per_second: 8
+  forms: [10-K, 10-Q, 8-K, 4, 13D, 13D/A, 13G, 13G/A]
+  primary_domains: [sec.gov, data.sec.gov]
+
+sources:
+  tiers:
+    1: [sec.gov, data.sec.gov, federalreserve.gov, bls.gov, bea.gov, company_ir]
+    2: [licensed_market_data, licensed_news]
+    3: [reputable_media, public_social]
+  numeric_claim_min_tier: 2
+  filing_claim_required_tier: 1
+
+priority:
+  weights:
+    market_move: 0.25
+    filing_materiality: 0.25
+    unusual_volume: 0.15
+    novelty: 0.15
+    insider_significance: 0.10
+    regime_relevance: 0.10
+  deep_dive_threshold: 0.65
+
+validation:
+  fail_closed: true
+  require_source_snapshot: true
+  require_verbatim_quote: true
+  require_numeric_token_grounding: true
+  require_arithmetic_recompute: true
+  require_point_in_time_cutoff: true
+  require_simulation_seed: true
+  minimum_simulation_iterations: 10000
+  forbid_approximate_locators: true
+  forbid_search_snippet_evidence: true
+
+features:
+  whale_activity: false
+  dark_pool: false
+  autonomous_x_publish: false
+  autonomous_website_publish: false

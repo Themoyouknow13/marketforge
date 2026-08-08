@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.citations.json
+.coverage
+htmlcov/
+.env
+runs/
+marketforge-scaffold.zip
+# Keep generated example/revalidated artifacts local-only; published briefs are tracked.
+site/output/example-report.html
+site/output/revalidated.html

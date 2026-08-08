@@ -1,0 +1,63 @@
+{
+  "run": {
+    "run_id": "example-2026-08-08",
+    "as_of": "2026-08-08T12:00:00Z",
+    "mode": "daily_close"
+  },
+  "sources": [
+    {
+      "id": "src-1",
+      "url": "https://www.sec.gov/Archives/example.htm",
+      "title": "Example filing snapshot",
+      "publisher": "SEC",
+      "tier": 1,
+      "retrieved_at": "2026-08-08T12:00:00Z",
+      "snapshot_path": "source-snapshot.txt",
+      "content_sha256": "c4fc38501ad651b64e2a1511f19960cb15a6e33c3257734beee2e293c9b5be20"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-1",
+      "source_id": "src-1",
+      "kind": "quote",
+      "quote": "Revenue was $100 million for the year ended December 31, 2025.",
+      "locator": {"section": "Item 8", "page": 42}
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-1",
+      "text": "Revenue was $100 million in fiscal 2025.",
+      "claim_type": "fact",
+      "evidence_ids": ["ev-1"],
+      "as_of": "2026-08-08T12:00:00Z"
+    }
+  ],
+  "article": {
+    "title": "MarketForge Validation Demo",
+    "summary": "A minimal article proving the claim-to-source publication gate.",
+    "summary_claim_ids": ["cl-1"],
+    "sections": [
+      {
+        "heading": "Fundamentals",
+        "paragraphs": [
+          {
+            "text": "Revenue was $100 million in fiscal 2025.",
+            "claim_ids": ["cl-1"]
+          }
+        ]
+      }
+    ],
+    "disclaimer": "Educational analysis only; not investment advice."
+  },
+  "x_thread": {
+    "posts": [
+      {
+        "sequence": 1,
+        "text": "Revenue was $100 million in fiscal 2025.",
+        "claim_ids": ["cl-1"]
+      }
+    ]
+  }
+}

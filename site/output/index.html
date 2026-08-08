@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Equities finished higher in this educational demo session, with the S&amp;P 500 at 5,420.15 (+0.85%) and the Nasdaq-100 at 19,180.40 (+1.20%). DEMO-A led on a 6.4% move after reporting $412 million in quarterly revenue and $1.85 billion of back">
+<meta name="robots" content="index,follow">
+<title>MarketForge Daily Brief — August 08, 2026</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #071018;
+  --panel: #101d27;
+  --line: #223746;
+  --text: #e8f0f5;
+  --muted: #96a8b4;
+  --accent: #7be0bd;
+  --claim: #ffca64;
+  --link: #81bff8;
+  --pill: #1b3344;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(circle at top, #0d1b27 0%, var(--bg) 42%); color: var(--text); }
+.shell { max-width: 980px; margin: auto; padding: 28px 20px 96px; }
+.topbar {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  align-items: center; margin-bottom: 28px; color: var(--muted); font-size: .92rem;
+}
+.badge {
+  display: inline-flex; gap: .5rem; align-items: center;
+  border: 1px solid var(--line); background: rgba(16,29,39,.85);
+  border-radius: 999px; padding: .45rem .85rem;
+}
+.badge strong { color: var(--accent); font-weight: 600; }
+header.hero {
+  background: linear-gradient(180deg, rgba(16,29,39,.95), rgba(16,29,39,.55));
+  border: 1px solid var(--line); border-radius: 22px; padding: 28px 28px 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.03em;
+  margin: 10px 0 14px;
+}
+.summary { font-size: 1.12rem; line-height: 1.7; color: #c5d4de; margin: 0; }
+.meta-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px; margin-top: 22px;
+}
+.meta-card {
+  background: rgba(7,16,24,.55); border: 1px solid var(--line);
+  border-radius: 14px; padding: 12px 14px;
+}
+.meta-card span { display: block; color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
+.meta-card strong { display: block; margin-top: 4px; font-size: .98rem; }
+.layout {
+  display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; margin-top: 28px;
+}
+nav.toc {
+  position: sticky; top: 18px; align-self: start;
+  background: rgba(16,29,39,.8); border: 1px solid var(--line);
+  border-radius: 16px; padding: 16px;
+}
+nav.toc h2 { margin: 0 0 10px; font-size: .85rem; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+nav.toc ol { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+nav.toc a { color: #d7e6ef; text-decoration: none; font-size: .92rem; }
+nav.toc a:hover { color: var(--accent); }
+main.article section {
+  background: rgba(16,29,39,.55); border: 1px solid var(--line);
+  border-radius: 18px; padding: 8px 22px 18px; margin-bottom: 18px;
+}
+h2 { margin-top: 18px; color: var(--accent); font-size: 1.25rem; }
+p { line-height: 1.8; color: #dce7ee; }
+.claim { color: var(--claim); margin-left: .15rem; text-decoration: none; font-size: .92em; }
+.claim:hover { text-decoration: underline; }
+.ledger { margin-top: 18px; }
+.claim-card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+  padding: 16px 18px; margin: 14px 0;
+}
+.claim-head { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.claim-card h3 { margin: 0; font-size: 1rem; color: var(--claim); }
+.pill {
+  display: inline-block; background: var(--pill); color: var(--accent);
+  border-radius: 999px; padding: .2rem .6rem; font-size: .75rem; text-transform: uppercase;
+}
+.claim-card ul { padding-left: 1.1rem; }
+.claim-card li { margin: 10px 0; }
+.meta { color: var(--muted); font-size: .86rem; }
+blockquote {
+  color: #b8c8d2; border-left: 3px solid var(--accent); margin: 8px 0 0;
+  padding: 4px 0 4px 12px;
+}
+table {
+  width: 100%; border-collapse: collapse; margin-top: 12px;
+  background: rgba(16,29,39,.55); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+}
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; color: #cfe7ff; }
+a { color: var(--link); }
+.disclaimer {
+  margin-top: 28px; padding: 18px 20px; border: 1px solid var(--line);
+  border-radius: 16px; color: var(--muted); background: rgba(16,29,39,.55); line-height: 1.7;
+}
+footer {
+  margin-top: 24px; color: #6f8290; font-size: .86rem; text-align: center;
+}
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  nav.toc { position: static; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div class="badge"><strong>MarketForge</strong><span>Daily Intelligence</span></div>
+    <div>Run <code>demo-20260808-165230</code> · mode <code>daily_close</code></div>
+  </div>
+
+  <header class="hero">
+    <div class="badge">As of 2026-08-08T16:52:30Z</div>
+    <h1>MarketForge Daily Brief — August 08, 2026</h1>
+    <p class="summary">Equities finished higher in this educational demo session, with the S&amp;P 500 at 5,420.15 (+0.85%) and the Nasdaq-100 at 19,180.40 (+1.20%). DEMO-A led on a 6.4% move after reporting $412 million in quarterly revenue and $1.85 billion of backlog. This report is a pipeline fixture for hosting tests — not live market advice. <a class="claim" href="#claim-cl-spx">[cl-spx]</a><a class="claim" href="#claim-cl-ndx">[cl-ndx]</a><a class="claim" href="#claim-cl-demo-a-move">[cl-demo-a-move]</a><a class="claim" href="#claim-cl-rev">[cl-rev]</a><a class="claim" href="#claim-cl-backlog">[cl-backlog]</a></p>
+    <div class="meta-grid">
+      <div class="meta-card"><span>Sources</span><strong>4</strong></div>
+      <div class="meta-card"><span>Evidence</span><strong>13</strong></div>
+      <div class="meta-card"><span>Claims</span><strong>15</strong></div>
+      <div class="meta-card"><span>Publish gate</span><strong>Validated</strong></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#market-overview">Market Overview</a></li><li><a href="#top-movers-why">Top Movers &amp; Why</a></li><li><a href="#sec-highlights">SEC Highlights</a></li><li><a href="#deep-dive-demo-a-fundamentals-valuation-fixture">Deep Dive — DEMO-A Fundamentals &amp; Valuation Fixture</a></li><li><a href="#sentiment-positioning-snapshot">Sentiment &amp; Positioning Snapshot</a></li><li><a href="#watchlist-key-metric">Watchlist &amp; Key Metric</a></li><li><a href="#risk-flags">Risk Flags</a></li>
+        <li><a href="#sources">Source index</a></li>
+        <li><a href="#ledger">Claim &amp; evidence ledger</a></li>
+      </ol>
+    </nav>
+    <main class="article">
+      <section id="market-overview"><h2>Market Overview</h2><p>U.S. equity benchmarks advanced in the demo tape. The S&amp;P 500 closed at 5,420.15, up 0.85%, while the Nasdaq-100 closed at 19,180.40, up 1.20%. The VIX settled at 14.8, consistent with a calm risk-on tape in this fixture. <a class="claim" href="#claim-cl-spx">[cl-spx]</a><a class="claim" href="#claim-cl-ndx">[cl-ndx]</a><a class="claim" href="#claim-cl-vix">[cl-vix]</a></p><p>Sector leadership favored Information Technology at +1.6%, while Energy lagged at -0.7%. The broader demo narrative was risk-on with selective rotation into growth. <a class="claim" href="#claim-cl-sectors">[cl-sectors]</a><a class="claim" href="#claim-cl-narrative">[cl-narrative]</a></p></section><section id="top-movers-why"><h2>Top Movers &amp; Why</h2><p>DEMO-A rose 6.4% on 18.2 million shares, about 2.4x average volume, after the demo 8-K highlighted stronger results and a large backlog. <a class="claim" href="#claim-cl-demo-a-move">[cl-demo-a-move]</a><a class="claim" href="#claim-cl-rev">[cl-rev]</a><a class="claim" href="#claim-cl-backlog">[cl-backlog]</a></p><p>DEMO-B fell 3.1% with no new filing in the demo tape, making it the session&#x27;s primary laggard in this educational universe. <a class="claim" href="#claim-cl-demo-b-move">[cl-demo-b-move]</a></p></section><section id="sec-highlights"><h2>SEC Highlights</h2><p>DEMO-A&#x27;s operations update reported revenue of $412 million versus $348 million a year earlier. Deterministic recomputation puts quarterly revenue growth at 18.39%. <a class="claim" href="#claim-cl-rev">[cl-rev]</a><a class="claim" href="#claim-cl-growth">[cl-growth]</a></p><p>Operating cash flow was $91 million. Management also reported backlog of $1.85 billion at June 30, 2026 and a completed $40 million share repurchase. <a class="claim" href="#claim-cl-ocf">[cl-ocf]</a><a class="claim" href="#claim-cl-backlog">[cl-backlog]</a><a class="claim" href="#claim-cl-buyback">[cl-buyback]</a></p><p>Insider filing activity in the demo window showed net selling of 37,000 shares over five trading days. That is a watch item, not a standalone thesis flip. <a class="claim" href="#claim-cl-insider">[cl-insider]</a></p></section><section id="deep-dive-demo-a-fundamentals-valuation-fixture"><h2>Deep Dive — DEMO-A Fundamentals &amp; Valuation Fixture</h2><p>Fundamentally, the demo filing links the price move to revenue of $412 million, cash generation of $91 million, and backlog visibility at $1.85 billion. <a class="claim" href="#claim-cl-rev">[cl-rev]</a><a class="claim" href="#claim-cl-ocf">[cl-ocf]</a><a class="claim" href="#claim-cl-backlog">[cl-backlog]</a></p><p>A reproducible DCF Monte Carlo (10,000 iterations, seed 42) on demo assumptions produced a median intrinsic value of $13.64, with a 5th–95th percentile band of $9.0 to $20.6. These outputs are educational pipeline fixtures only. <a class="claim" href="#claim-cl-sim">[cl-sim]</a></p></section><section id="sentiment-positioning-snapshot"><h2>Sentiment &amp; Positioning Snapshot</h2><p>The demo news desk characterized the session as risk-on with selective rotation into growth, aligning with the stronger Nasdaq-100 print at 19,180.40 (+1.20%) and softer Energy performance at -0.7%. <a class="claim" href="#claim-cl-narrative">[cl-narrative]</a><a class="claim" href="#claim-cl-ndx">[cl-ndx]</a><a class="claim" href="#claim-cl-sectors">[cl-sectors]</a></p></section><section id="watchlist-key-metric"><h2>Watchlist &amp; Key Metric</h2><p>Priority names in this fixture: DEMO-A (filing + volume thrust), DEMO-B (laggard without catalyst), and the Information Technology leadership tape at +1.6%. <a class="claim" href="#claim-cl-demo-a-move">[cl-demo-a-move]</a><a class="claim" href="#claim-cl-demo-b-move">[cl-demo-b-move]</a><a class="claim" href="#claim-cl-sectors">[cl-sectors]</a></p><p>The single metric to watch next is DEMO-A backlog conversion against the $1.85 billion figure. <a class="claim" href="#claim-cl-watch">[cl-watch]</a><a class="claim" href="#claim-cl-backlog">[cl-backlog]</a></p></section><section id="risk-flags"><h2>Risk Flags</h2><p>Key cautions in the demo package: net insider selling of 37,000 shares, dependence on backlog conversion from the $1.85 billion total, and the fact that this entire report is a synthetic fixture for website hosting tests. <a class="claim" href="#claim-cl-insider">[cl-insider]</a><a class="claim" href="#claim-cl-backlog">[cl-backlog]</a></p></section>
+
+      <section id="sources">
+        <h2>Source Index</h2>
+        <p>Every publishable statement in this report traces to one of these hashed snapshots.</p>
+        <table>
+          <thead><tr><th>ID</th><th>Title</th><th>Publisher</th><th>Tier</th><th>Hash</th></tr></thead>
+          <tbody><tr><td>src-market</td><td><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a></td><td>MarketForge Demo</td><td>2</td><td><code>994e7a5eda7f…</code></td></tr><tr><td>src-8k</td><td><a href="https://example.local/marketforge/demo/demo-a-8k">DEMO-A Item 2.02 8-K excerpt</a></td><td>MarketForge Demo SEC Fixture</td><td>1</td><td><code>f1ec484a2037…</code></td></tr><tr><td>src-form4</td><td><a href="https://example.local/marketforge/demo/demo-a-form4">DEMO-A Form 4 cluster summary</a></td><td>MarketForge Demo SEC Fixture</td><td>1</td><td><code>09ff8dead047…</code></td></tr><tr><td>src-news</td><td><a href="https://example.local/marketforge/demo/news-desk">Demo news desk note</a></td><td>MarketForge Demo</td><td>3</td><td><code>40d34d9ddfd8…</code></td></tr></tbody>
+        </table>
+      </section>
+
+      <section class="ledger" id="ledger">
+        <h2>Claim &amp; Evidence Ledger</h2>
+        <p>Click any gold claim marker in the article to jump here. Expand the supporting quote and source path before acting on a statement.</p>
+        <article class="claim-card" id="claim-cl-spx"><div class="claim-head"><h3>cl-spx</h3><span class="pill">fact</span></div><p>The S&amp;P 500 closed at 5,420.15, up 0.85%.</p><ul><li><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a> <span class="meta">Tier 2 · Index closes</span><blockquote>S&amp;P 500 closed at 5,420.15, up 0.85% on the session.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-ndx"><div class="claim-head"><h3>cl-ndx</h3><span class="pill">fact</span></div><p>The Nasdaq-100 closed at 19,180.40, up 1.20%.</p><ul><li><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a> <span class="meta">Tier 2 · Index closes</span><blockquote>Nasdaq-100 closed at 19,180.40, up 1.20%.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-vix"><div class="claim-head"><h3>cl-vix</h3><span class="pill">fact</span></div><p>The VIX settled at 14.8.</p><ul><li><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a> <span class="meta">Tier 2 · Volatility</span><blockquote>VIX settled at 14.8.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-demo-a-move"><div class="claim-head"><h3>cl-demo-a-move</h3><span class="pill">fact</span></div><p>DEMO-A rose 6.4% on 18.2 million shares, about 2.4x average volume.</p><ul><li><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a> <span class="meta">Tier 2 · Movers</span><blockquote>Top gainer in the demo universe: DEMO-A rose 6.4% on volume of 18.2 million shares, about 2.4x its 20-day average volume.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-demo-b-move"><div class="claim-head"><h3>cl-demo-b-move</h3><span class="pill">fact</span></div><p>DEMO-B fell 3.1% with no new filing in the demo tape.</p><ul><li><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a> <span class="meta">Tier 2 · Movers</span><blockquote>Top laggard in the demo universe: DEMO-B fell 3.1% after a quiet session with no new filing.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-sectors"><div class="claim-head"><h3>cl-sectors</h3><span class="pill">fact</span></div><p>Information Technology led at +1.6% while Energy lagged at -0.7%.</p><ul><li><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a> <span class="meta">Tier 2 · Sectors</span><blockquote>Sector leadership: Information Technology +1.6%, Energy -0.7%.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-rev"><div class="claim-head"><h3>cl-rev</h3><span class="pill">fact</span></div><p>DEMO-A reported quarterly revenue of $412 million versus $348 million a year earlier.</p><ul><li><a href="https://example.local/marketforge/demo/demo-a-8k">DEMO-A Item 2.02 8-K excerpt</a> <span class="meta">Tier 1 · Item 2.02, p. 2</span><blockquote>For the quarter ended June 30, 2026, DEMO-A reported revenue of $412 million, compared with $348 million in the prior-year quarter.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-growth"><div class="claim-head"><h3>cl-growth</h3><span class="pill">calculation</span></div><p>DEMO-A quarterly revenue growth was 18.39%.</p><ul><li><a href="https://example.local/marketforge/demo/demo-a-8k">DEMO-A Item 2.02 8-K excerpt</a> <span class="meta">Tier 1 · Item 2.02, p. 2</span><blockquote>For the quarter ended June 30, 2026, DEMO-A reported revenue of $412 million, compared with $348 million in the prior-year quarter.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-ocf"><div class="claim-head"><h3>cl-ocf</h3><span class="pill">fact</span></div><p>DEMO-A operating cash flow was $91 million in the quarter.</p><ul><li><a href="https://example.local/marketforge/demo/demo-a-8k">DEMO-A Item 2.02 8-K excerpt</a> <span class="meta">Tier 1 · Item 2.02, p. 2</span><blockquote>Operating cash flow was $91 million for the same quarter.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-backlog"><div class="claim-head"><h3>cl-backlog</h3><span class="pill">fact</span></div><p>DEMO-A backlog stood at $1.85 billion at June 30, 2026.</p><ul><li><a href="https://example.local/marketforge/demo/demo-a-8k">DEMO-A Item 2.02 8-K excerpt</a> <span class="meta">Tier 1 · Item 2.02, p. 3</span><blockquote>Management stated: backlog stood at $1.85 billion at June 30, 2026.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-buyback"><div class="claim-head"><h3>cl-buyback</h3><span class="pill">fact</span></div><p>DEMO-A completed a $40 million share repurchase during the quarter.</p><ul><li><a href="https://example.local/marketforge/demo/demo-a-8k">DEMO-A Item 2.02 8-K excerpt</a> <span class="meta">Tier 1 · Item 2.02, p. 3</span><blockquote>The company also disclosed a $40 million share repurchase completed during the quarter.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-insider"><div class="claim-head"><h3>cl-insider</h3><span class="pill">fact</span></div><p>Net insider activity was a sale of 37,000 shares over five trading days.</p><ul><li><a href="https://example.local/marketforge/demo/demo-a-form4">DEMO-A Form 4 cluster summary</a> <span class="meta">Tier 1 · Form 4 cluster</span><blockquote>Net insider activity was a sale of 37,000 shares.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-narrative"><div class="claim-head"><h3>cl-narrative</h3><span class="pill">interpretation</span></div><p>The demo market narrative was risk-on with selective rotation into growth.</p><ul><li><a href="https://example.local/marketforge/demo/news-desk">Demo news desk note</a> <span class="meta">Tier 3 · Narrative</span><blockquote>Overall market narrative in this demo: risk-on with selective rotation into growth.</blockquote></li><li><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a> <span class="meta">Tier 2 · Index closes</span><blockquote>S&amp;P 500 closed at 5,420.15, up 0.85% on the session.</blockquote></li><li><a href="https://example.local/marketforge/demo/market-tape">Demo market tape</a> <span class="meta">Tier 2 · Index closes</span><blockquote>Nasdaq-100 closed at 19,180.40, up 1.20%.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-sim"><div class="claim-head"><h3>cl-sim</h3><span class="pill">simulation</span></div><p>A reproducible DCF Monte Carlo (10,000 iterations, seed 42) on demo assumptions produced a median intrinsic value of $13.64, with a 5th–95th percentile band of $9.0 to $20.6.</p><ul><li><a href="https://example.local/marketforge/demo/demo-a-8k">DEMO-A Item 2.02 8-K excerpt</a> <span class="meta">Tier 1 · Item 2.02, p. 2</span><blockquote>Operating cash flow was $91 million for the same quarter.</blockquote></li></ul></article><article class="claim-card" id="claim-cl-watch"><div class="claim-head"><h3>cl-watch</h3><span class="pill">interpretation</span></div><p>The single metric to watch next is DEMO-A backlog conversion against the $1.85 billion figure.</p><ul><li><a href="https://example.local/marketforge/demo/demo-a-8k">DEMO-A Item 2.02 8-K excerpt</a> <span class="meta">Tier 1 · Item 2.02, p. 3</span><blockquote>Management stated: backlog stood at $1.85 billion at June 30, 2026.</blockquote></li></ul></article>
+      </section>
+
+      <p class="disclaimer">Educational analysis and pipeline demonstration only. Not investment advice. DEMO tickers and figures are synthetic fixtures used to exercise MarketForge&#x27;s claim → evidence → source publication gate. Always verify primary sources and consult licensed professionals before making financial decisions.</p>
+      <footer>Generated by MarketForge · fail-closed claim lineage · educational use only</footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>
