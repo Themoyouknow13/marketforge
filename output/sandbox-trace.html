@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sandbox Agent Trace — live-20260808-170443</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,system-ui,sans-serif}
+body{margin:0;background:#071018;color:#e8f0f5}
+.shell{max-width:1100px;margin:auto;padding:28px 18px 80px}
+.card{background:#101d27;border:1px solid #223746;border-radius:16px;padding:18px;margin:16px 0}
+h1{margin:0 0 8px}
+.muted{color:#96a8b4}
+.ok{color:#7be0bd} .bad{color:#ff8f8f}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:10px;border-bottom:1px solid #223746;vertical-align:top;font-size:.92rem}
+th{color:#96a8b4;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+a{color:#81bff8}
+code{color:#cfe7ff}
+.badge{display:inline-block;border:1px solid #223746;border-radius:999px;padding:.35rem .75rem;margin-right:8px}
+</style></head><body><div class="shell">
+<div class="card">
+  <div class="badge">MarketForge Sandbox</div>
+  <div class="badge">Dual-Thesis Agents v1</div>
+  <h1>Agent deployment testrun</h1>
+  <p class="muted">Parent brief: MarketForge Live Brief — August 08, 2026 17:04 UTC</p>
+  <p>Status:
+    <strong class="ok">PASSED</strong>
+    · parent run <code>live-20260808-170443</code>
+    · as of <code>2026-08-08T17:04:43Z</code>
+  </p>
+  <p>Popular direction: <strong>risk_on</strong>
+     · bull 5
+     · bear 4
+     · contested 0
+     · neutral 5
+  </p>
+  <p>
+    <a href="dual-thesis.html">Open dual-thesis page →</a> ·
+    <a href="index.html">Daily brief →</a> ·
+    <a href="hub.html">Hub →</a>
+  </p>
+</div>
+<div class="card">
+  <h2>Stage trace</h2>
+  <table>
+    <thead><tr><th>Agent</th><th>Status</th><th>Duration</th><th>Notes</th><th>Output keys</th><th>Error</th></tr></thead>
+    <tbody><tr><td><code>thesis_orchestrator</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>0 ms</td><td>Frozen parent claim ledger; no browsing permitted.</td><td>as_of, boundary, claim_count, phase, run_id, source_count</td><td>—</td></tr><tr><td><code>parent_bundle_validator</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>1 ms</td><td>Parent MarketForge bundle must already be fail-closed publishable.</td><td>claim_ids, publishable</td><td>—</td></tr><tr><td><code>evidence_polarizer</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>0 ms</td><td>Tags derived only from approved claim text polarity.</td><td>counts, polarization, tagged_claims</td><td>—</td></tr><tr><td><code>consensus_classifier</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>0 ms</td><td>Popular direction is a tape-consensus label, not a correctness claim.</td><td>confidence_note, driver_claim_ids, popular_direction, popular_is_not_truth</td><td>—</td></tr><tr><td><code>bull_architect</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>0 ms</td><td>Steelman upside using only approved claim_ids.</td><td>frames</td><td>—</td></tr><tr><td><code>bear_architect</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>0 ms</td><td>Steelman downside; does not suppress bull evidence.</td><td>frames</td><td>—</td></tr><tr><td><code>dialectic_critic</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>0 ms</td><td>Point/counterpoint only; no winner declaration.</td><td>dialectic</td><td>—</td></tr><tr><td><code>dual_thesis_editor</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>0 ms</td><td>Assembled four frames + dialectic into publish schema.</td><td>thesis_bundle</td><td>—</td></tr><tr><td><code>grounding_auditor</code></td><td style='color:#7be0bd'><strong>ok</strong></td><td>2 ms</td><td>Independent audit; no silent repairs.</td><td>findings, pass, publishable</td><td>—</td></tr></tbody>
+  </table>
+</div>
+<div class="card">
+  <h2>Failed stages</h2>
+  <p>None</p>
+  <p class="muted">Completed at 2026-08-08T17:17:13Z</p>
+</div>
+</div></body></html>
