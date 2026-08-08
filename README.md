@@ -31,6 +31,10 @@ uv run python -m marketforge.cli validate examples/valid-run.json \
 # Full end-to-end demo briefing (grounded bundle → validate → shippable HTML)
 uv run python scripts/run_demo_briefing.py
 # Open: site/output/daily-brief-YYYY-MM-DD.html  or  site/index.html
+
+# LIVE scrape (Yahoo market prints + SEC EDGAR feeds → validate → HTML)
+uv run python scripts/run_live_briefing.py
+# Open: site/output/live-brief-YYYY-MM-DD.html
 ```
 
 ## Live site
